@@ -1,17 +1,25 @@
-// Smooth scroll for nav links
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e){
-    if(this.hash){
-      e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({behavior: "smooth"});
-    }
-  });
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
 
-// Remove cursor from typing effect after animation
-window.addEventListener('DOMContentLoaded', function(){
-  const h1 = document.querySelector('h1.typingAnim');
-  setTimeout(() => {
-    h1.style.borderRight = 'none';
-  }, 2300);
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
