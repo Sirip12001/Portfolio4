@@ -23,3 +23,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// Scroll animations
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Tilt effect
+VanillaTilt.init(document.querySelectorAll(".project-card"), {
+    max: 25,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.5,
+});
