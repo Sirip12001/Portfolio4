@@ -1,9 +1,9 @@
 :root {
-    --bg: #FDFDFF;
-    --text: #121212;
-    --primary: #6C63FF;
-    --card-bg: #FFFFFF;
-    --shadow: rgba(0, 0, 0, 0.1);
+    --bg: #1a1a2e;
+    --text: #FDFDFF;
+    --primary: #e94560;
+    --card-bg: #2a2a4e;
+    --shadow: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -80,6 +80,14 @@ section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero {
@@ -111,7 +119,7 @@ section {
 }
 
 .btn:hover {
-    background-color: #524ac4;
+    background-color: #c73850;
 }
 
 .hero-image img {
