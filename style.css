@@ -17,7 +17,6 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -177,8 +176,6 @@ footer.footer {
   color: var(--muted);
   font-size: 1.08em;
 }
-
-/* Contact section */
 .contact-section {
   background: #F7F9FB;
   border-radius: 18px;
